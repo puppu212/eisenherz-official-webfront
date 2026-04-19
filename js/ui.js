@@ -11,18 +11,33 @@
   // ---- Hamburger ----
   const hamBtn = document.getElementById("ham-btn");
   const navOverlay = document.getElementById("nav-overlay");
+  let scrollLockY = 0;
+
+  function lockScroll() {
+    scrollLockY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollLockY}px`;
+    document.body.style.width = "100%";
+  }
+
+  function unlockScroll() {
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    window.scrollTo(0, scrollLockY);
+  }
 
   hamBtn.addEventListener("click", () => {
     const open = navOverlay.classList.toggle("open");
     hamBtn.classList.toggle("open", open);
-    document.body.style.overflow = open ? "hidden" : "";
+    open ? lockScroll() : unlockScroll();
   });
 
   navOverlay.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
       navOverlay.classList.remove("open");
       hamBtn.classList.remove("open");
-      document.body.style.overflow = "";
+      unlockScroll();
     });
   });
 
