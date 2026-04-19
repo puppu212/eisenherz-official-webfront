@@ -1,8 +1,10 @@
 (function () {
   // ---- Loader ----
   const loader = document.getElementById("loader");
+  document.body.style.overflow = "hidden";
   setTimeout(() => {
     loader.classList.add("hide");
+    document.body.style.overflow = "";
     setTimeout(() => loader.remove(), 600);
   }, 1200);
 
