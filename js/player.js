@@ -66,7 +66,7 @@
     audio.src = t.file;
     deEl.textContent = t.de;
     jpEl.textContent = t.jp;
-    jkt.src = `img/cover1.png`;
+    jkt.src = `img/cover1.webp`;
     durEl.textContent = fmt(t.seconds);
     curEl.textContent = "0:00";
     setBar(0);
