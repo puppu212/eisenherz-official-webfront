@@ -57,7 +57,7 @@
   });
 
   // 単体要素
-  [".sh", ".kv-wrap", ".about-body", ".about-stats", ".werke-lead", ".colo .big", ".colo-bot"].forEach(observe);
+  [".hero-cta", ".sh", ".kv-wrap", ".about-body", ".about-stats", ".werke-lead", ".colo .big", ".colo-bot"].forEach(observe);
 
   // 曲リスト
   observe(".trk");

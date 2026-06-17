@@ -247,6 +247,64 @@ a {
   opacity: 0.75;
 }
 
+/* ========== HERO CTA ========== */
+.hero-cta {
+  background: var(--paper);
+  color: var(--black);
+  border-top: 1px solid var(--paper);
+  border-bottom: 1px solid var(--paper);
+  width: min(1180px, calc(100% - clamp(32px, 6vw, 80px)));
+  margin: 0 auto;
+  padding: 18px clamp(16px, 3vw, 40px);
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+  gap: clamp(16px, 3vw, 48px);
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.hero-cta .big {
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
+}
+
+.hero-cta-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.hero-cta-actions a {
+  border: 1px solid var(--black);
+  color: var(--black);
+  font-family: "EB Garamond", serif;
+  font-size: 15px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  padding: 10px 18px;
+  text-decoration: none;
+  text-transform: none;
+  white-space: nowrap;
+  transition: background .15s, border-color .15s, color .15s;
+}
+
+.hero-cta-actions a.primary {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--paper);
+}
+
+.hero-cta-actions a:hover {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--paper);
+}
+
 /* ========== KEY VISUAL ========== */
 .kv {
   position: relative;
@@ -1040,6 +1098,16 @@ a {
   .topbar nav a { padding: 14px 12px; font-size: 10px; }
   .topbar .stamp { display: none; }
 
+  .hero-cta {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+  .hero-cta .big,
+  .hero-cta-actions {
+    grid-column: 1 / -1;
+  }
+  .hero-cta-actions { justify-content: flex-start; }
+
   .about-body { grid-template-columns: 1fr; }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .about-stats div:nth-child(2n) { border-right: none; }
@@ -1076,6 +1144,22 @@ a {
   .hero-tagline { grid-template-columns: 1fr; gap: 12px; }
   .hero-tagline::before, .hero-tagline::after { display: none; }
   .break-sp { display: block; }
+
+  .hero-cta {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    font-size: 10px;
+  }
+  .hero-cta .big { font-size: 22px; }
+  .hero-cta-actions {
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-cta-actions a {
+    flex: 1 1 140px;
+    text-align: center;
+  }
 
   .kv-wrap { flex-direction: column; }
   .kv { flex: none; width: 100%; }
