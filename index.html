@@ -29,12 +29,12 @@
       <a href="#colo">Contact</a>
     </nav>
     <div class="stamp">OFFICIAL WEBFRONT</div>
-    <button class="ham-btn" id="ham-btn" aria-label="メニュー">
+    <button class="ham-btn" id="ham-btn" type="button" aria-label="メニュー" aria-controls="nav-overlay" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <nav class="nav-overlay" id="nav-overlay">
+  <nav class="nav-overlay" id="nav-overlay" aria-hidden="true" inert>
     <a href="#shots" data-n="N° I"> <span class="num">N° I</span>Screenshots</a>
     <a href="#about" data-n="N° II"> <span class="num">N° II</span>About</a>
     <a href="#mit" data-n="N° III"><span class="num">N° III</span>Characters</a>
@@ -62,7 +62,7 @@
     <span>Girls' Punk Propaganda Strategy</span>
     <span>Single Player</span>
     <span class="big gar itl">— official webfront.</span>
-    <span>Windows 10 / 11</span>
+    <span>Windows / macOS</span>
     <div class="hero-cta-actions">
       <a href="https://puppu212.github.io/eisenherz/" class="primary">Download</a>
       <a href="#werke">Soundtrack ▶</a>
@@ -120,7 +120,7 @@
       </div>
       <div>
         <dt>System Requirements</dt>
-        <dd>Windows10 / 11</dd>
+        <dd>Windows / macOS</dd>
       </div>
       <div>
         <dt>Release</dt>
@@ -262,22 +262,22 @@
       </div>
     </div>
     <div class="mid">
-      <button id="p-prev">⟵ prev</button>
-      <button class="playbtn" id="p-play">▶</button>
-      <button id="p-next">next ⟶</button>
-      <div class="progresswrap">
-        <span class="time" id="p-cur">0:00</span>
-        <div class="progress" id="p-prog">
-          <div class="bar" id="p-bar"></div>
-          <div class="thumb" id="p-thumb"></div>
-        </div>
-        <span class="time r" id="p-dur">0:00</span>
+      <button id="p-prev" type="button" aria-label="前の曲">⟵ prev</button>
+      <button class="playbtn" id="p-play" type="button" aria-label="再生">▶</button>
+      <button id="p-next" type="button" aria-label="次の曲">next ⟶</button>
+    </div>
+    <div class="progresswrap">
+      <span class="time" id="p-cur">0:00</span>
+      <div class="progress" id="p-prog" role="slider" tabindex="0" aria-label="再生位置" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="bar" id="p-bar"></div>
+        <div class="thumb" id="p-thumb"></div>
       </div>
+      <span class="time r" id="p-dur">0:00</span>
     </div>
     <div class="r-col">
       <div class="vol">
         <span class="vlabel">VOLUME</span>
-        <div class="vbar" id="p-vol">
+        <div class="vbar" id="p-vol" role="slider" tabindex="0" aria-label="音量" aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
           <div class="vfill" id="p-vfill"></div>
         </div>
       </div>
